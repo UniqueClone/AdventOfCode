@@ -48,6 +48,7 @@ fn part1(file_path: String) {
 
 fn part2(file_path: String) {
     let contents = fs::read_to_string(file_path).expect("Should have been able to read the file");
+    let mut total = 0;
 
     for line in contents.lines() {
         let mut pos1 = String::from("");
@@ -64,7 +65,13 @@ fn part2(file_path: String) {
                 }
             }
         }
+        let number = pos1 + &pos2;
+        let number: i32 = number.parse().unwrap();
+
+        total += number;
     }
+
+    println!("{}", total);
 }
 
 /**
@@ -73,26 +80,16 @@ fn part2(file_path: String) {
  * e.g. "two" -> "2"
  */
 fn convert_secret_number(string: String) -> String {
-    let one = "one";
-    let two = "two";
-    let three = "three";
-    let four = "four";
-    let five = "five";
-    let six = "six";
-    let seven = "seven";
-    let eight = "eight";
-    let nine = "nine";
-
     match string {
-        "one" => "1",
-        "two" => "2",
-        "three" => "3",
-        "four" => "4",
-        "five" => "5",
-        "six" => "6",
-        "seven" => "7",
-        "eight" => "8",
-        "nine" => "9",
-        _ => "0",
+        one => String::from("1"),
+        two => String::from("2"),
+        three => String::from("3"),
+        four => String::from("4"),
+        five => String::from("5"),
+        six => String::from("6"),
+        seven => String::from("7"),
+        eight => String::from("8"),
+        nine => String::from("9"),
+        _ => String::from(""),
     }
 }
