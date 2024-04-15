@@ -1,5 +1,7 @@
 mod day1;
+mod day2;
 use day1::day1;
+use day2::day2;
 use std::io;
 
 fn main() {
@@ -18,6 +20,7 @@ fn main() {
 
     match input {
         1 => day1(file_path_prefix.to_string() + "day1/input.txt"),
+        2 => day2(file_path_prefix.to_string() + "day2/input.txt"),
         _ => println!("No such day"),
     }
 }
