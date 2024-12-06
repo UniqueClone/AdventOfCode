@@ -1,6 +1,4 @@
 # AdventOfCode
 
-This repository has my solutions to this year's AdventOfCode challenges.
+This repository has my solutions to the AdventOfCode challenges.
 The challenges can be found at <https://adventofcode.com>
-
-I'm using these challenges to practice my Python skills and might come back to them and try improve my C# too.
