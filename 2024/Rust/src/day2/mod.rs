@@ -109,6 +109,7 @@ fn part2(file_path: String) {
         for (i, num) in line.split_whitespace().enumerate() {
             // let cur_char = char.to_string();
 
+            // Parse the number
             let current = match num.parse::<i32>() {
                 Ok(n) => n,
                 Err(_) => {
@@ -118,6 +119,11 @@ fn part2(file_path: String) {
                 }
             };
 
+            // Check if the number is safe
+            // If the number is the first in the line, set the previous number to the current number and continue
+            // If the current number is the same as the previous number, the report is unsafe
+            // If the current number is more than 3 away from the previous number, the report is unsafe
+            // If the current number is the second number in the line, check if the difference between the current and previous number is more than 3
             if i == 0 {
                 prev = current;
                 continue;
